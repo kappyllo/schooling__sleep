@@ -5,6 +5,7 @@
     rgba(238, 174, 202, 1) 0%,
     rgba(148, 187, 233, 1) 100%
   );
+  --app-background: antiquewhite;
 }
 
 * {
@@ -18,6 +19,17 @@ html {
 }
 
 body {
+  width: 100%;
+  height: 100%;
   background: var(--background-color);
   background: var(--background-color-gradient);
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.main--container {
+  background-color: var(--app-background);
+  height: 100%;
+  width: 40%;
 }
