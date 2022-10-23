@@ -11,10 +11,32 @@ const submit = document.querySelector(".give--me--answer--input");
 
 let busHour;
 let selectedAmountOfHours;
-let isChoosen = false;
+let isChoosenHour = false;
+let isChoosenBus = false;
+
+const selectingHours = function () {
+  isChoosenHour = true;
+  return isChoosenHour;
+};
+
+sixHours.addEventListener("click", function () {
+  selectingHours();
+});
+
+sevenHours.addEventListener("click", function () {
+  selectingHours();
+});
+
+eightHours.addEventListener("click", function () {
+  selectingHours();
+});
+
+nineHours.addEventListener("click", function () {
+  selectingHours();
+});
 
 submit.addEventListener("click", function () {
-  if (isChoosen == false) {
-    submit.onclick = "location.href='d.html';";
+  if ((isChoosenHour === true) & (isChoosenBus === true)) {
+    window.location = "answer.html";
   }
 });
