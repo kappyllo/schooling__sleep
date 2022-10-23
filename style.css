@@ -33,10 +33,12 @@ body {
   background: var(--app-background);
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .main--text {
-  margin-top: 2rem;
   font-weight: 700;
   text-align: center;
   font-size: 3rem;
@@ -88,6 +90,10 @@ hr {
 
 .give--me--answer {
   text-align: center;
+}
+
+.give--me--answer:hover {
+  cursor: pointer;
 }
 
 .give--me--answer--input {
