@@ -6,6 +6,7 @@
     rgba(148, 187, 233, 1) 100%
   );
   --app-background: antiquewhite;
+  --font-family: "Roboto", sans-serif;
 }
 
 * {
@@ -25,11 +26,74 @@ body {
   background: var(--background-color-gradient);
   display: flex;
   justify-content: center;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-family);
 }
 
 .main--container {
-  background-color: var(--app-background);
+  background: var(--app-background);
   height: 100%;
-  width: 40%;
+  width: 100%;
+}
+
+.main--text {
+  margin-top: 2rem;
+  font-weight: 700;
+  text-align: center;
+  font-size: 3rem;
+  color: rgb(121, 73, 255);
+}
+
+.main--text a {
+  text-decoration: none;
+}
+
+.main--text--first--verse {
+  color: rgb(121, 73, 255);
+}
+
+.main--text--second--verse {
+  font-size: 3rem;
+}
+
+hr {
+  size: 2rem;
+}
+
+.time--question {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.bus--time--input {
+  margin-top: 1rem;
+  height: 10vh;
+  width: 50vw;
+  background-color: antiquewhite;
+  border-radius: 2rem;
+  font-size: 2rem;
+  border-color: rgb(121, 73, 255);
+  font-family: var(--font-family);
+}
+
+.how--long--question {
+  margin: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.how--long--check--boxes {
+  margin-top: 1.5rem;
+}
+
+.give--me--answer {
+  text-align: center;
+}
+
+.give--me--answer--input {
+  background-color: antiquewhite;
+  border: 2px solid blueviolet;
+  border-radius: 2rem;
+  padding: 1rem;
+  font-size: 1.2rem;
 }
