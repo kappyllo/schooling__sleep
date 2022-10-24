@@ -36,6 +36,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
 }
 
 .main--text {
@@ -63,7 +64,6 @@ hr {
 
 .time--question {
   margin-top: 2rem;
-  text-align: center;
   font-size: 1.2rem;
 }
 
@@ -76,21 +76,15 @@ hr {
   font-size: 2rem;
   border-color: rgb(121, 73, 255);
   font-family: var(--font-family);
-  text-align: center;
 }
 
 .how--long--question {
   margin: 2rem;
-  text-align: center;
   font-size: 1.5rem;
 }
 
 .how--long--check--boxes {
   margin-top: 1.5rem;
-}
-
-.give--me--answer {
-  text-align: center;
 }
 
 .give--me--answer:hover {
@@ -103,4 +97,9 @@ hr {
   border-radius: 2rem;
   padding: 1rem;
   font-size: 1.2rem;
+}
+
+.what--time--sleep,
+.what--time--wakeup {
+  margin-top: 2rem;
 }
