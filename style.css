@@ -6,7 +6,7 @@
     rgba(148, 187, 233, 1) 100%
   );
   --app-background: antiquewhite;
-  --font-family: "Roboto", sans-serif;
+  --font-family: "Roboto Mono", monospace;
 }
 
 * {
