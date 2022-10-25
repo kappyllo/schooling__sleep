@@ -24,8 +24,9 @@ const selectingHours = function () {
 };
 
 //event listeners
-busTime.addEventListener("click", function () {
-  selectedAmountOfHours = this.busTime.value;
+busTime.addEventListener("change", function () {
+  selectedAmountOfHours = busTime.value;
+  return selectedAmountOfHours;
 });
 
 sixHours.addEventListener("click", function () {
