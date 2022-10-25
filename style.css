@@ -101,5 +101,13 @@ hr {
 
 .what--time--sleep,
 .what--time--wakeup {
-  margin-top: 2rem;
+  margin-top: 5rem;
+}
+
+.what--time--sleep {
+  margin-top: 5rem;
+}
+
+.what--time--wakeup {
+  font-size: 1.2rem;
 }

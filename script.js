@@ -8,6 +8,8 @@ const sevenHours = document.querySelector(".seven--hours");
 const eightHours = document.querySelector(".eight--hours");
 const nineHours = document.querySelector(".nine--hours");
 const submit = document.querySelector(".give--me--answer--input");
+const sleepHour = document.querySelector(".sleep--time");
+const wakeUpHour = document.querySelector(".wakeup--time");
 
 //adding variables
 let busHour;
@@ -22,6 +24,9 @@ const selectingHours = function () {
 };
 
 //event listeners
+busTime.addEventListener("click", function () {
+  selectedAmountOfHours = this.busTime.value;
+});
 
 sixHours.addEventListener("click", function () {
   selectingHours();
