@@ -16,34 +16,37 @@ let busHour;
 let selectedAmountOfHours;
 let isChoosenHour = false;
 let isChoosenBus = false;
-
-const globals = {
-  currentHour: "",
-};
+let sleepTime;
 
 //functions
-const selectingHours = function () {
+const selectingHours = function (x) {
   isChoosenHour = true;
+  selectedAmountOfHours = x;
   return isChoosenHour;
 };
 
-//event listeners
-busTime.addEventListener("change", function () {});
+function timeStringToFloat(time) {
+  let hoursMinutes = time.split(/[.:]/);
+  let hours = parseInt(hoursMinutes[0], 10);
+  let minutes = hoursMinutes[1] ? parseInt(hoursMinutes[1], 10) : 0;
+  return hours + minutes / 60;
+}
 
+//event listeners
 sixHours.addEventListener("click", function () {
-  selectingHours();
+  selectingHours(6);
 });
 
 sevenHours.addEventListener("click", function () {
-  selectingHours();
+  selectingHours(7);
 });
 
 eightHours.addEventListener("click", function () {
-  selectingHours();
+  selectingHours(8);
 });
 
 nineHours.addEventListener("click", function () {
-  selectingHours();
+  selectingHours(9);
 });
 
 submit.addEventListener("click", function () {
@@ -51,10 +54,12 @@ submit.addEventListener("click", function () {
     isChoosenBus = true;
   }
   if ((isChoosenHour === true) & (isChoosenBus === true)) {
-    globals.currentHour = busTime.value;
-    Object.freeze(globals);
+    sleepTime = timeStringToFloat(busTime.value) - selectedAmountOfHours;
     window.location = "answer.html";
   }
 });
 
+if (window.location == "answer.html") {
+  sleepHour.textContent = sleepTime;
+}
 // dodac zeby selectedhour bylo zapisane jako element w pliku answer html
