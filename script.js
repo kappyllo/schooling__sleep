@@ -17,6 +17,10 @@ let selectedAmountOfHours;
 let isChoosenHour = false;
 let isChoosenBus = false;
 
+const globals = {
+  currentHour: "",
+};
+
 //functions
 const selectingHours = function () {
   isChoosenHour = true;
@@ -24,10 +28,7 @@ const selectingHours = function () {
 };
 
 //event listeners
-busTime.addEventListener("change", function () {
-  selectedAmountOfHours = busTime.value;
-  return selectedAmountOfHours;
-});
+busTime.addEventListener("change", function () {});
 
 sixHours.addEventListener("click", function () {
   selectingHours();
@@ -50,6 +51,10 @@ submit.addEventListener("click", function () {
     isChoosenBus = true;
   }
   if ((isChoosenHour === true) & (isChoosenBus === true)) {
+    globals.currentHour = busTime.value;
+    Object.freeze(globals);
     window.location = "answer.html";
   }
 });
+
+// dodac zeby selectedhour bylo zapisane jako element w pliku answer html
