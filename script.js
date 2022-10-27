@@ -8,8 +8,6 @@ const sevenHours = document.querySelector(".seven--hours");
 const eightHours = document.querySelector(".eight--hours");
 const nineHours = document.querySelector(".nine--hours");
 const submit = document.querySelector(".give--me--answer--input");
-const sleepHour = document.querySelector(".sleep--time");
-const wakeUpHour = document.querySelector(".wakeup--time");
 
 //adding variables
 let busHour;
@@ -21,7 +19,7 @@ let sleepTime;
 //functions
 const selectingHours = function (x) {
   isChoosenHour = true;
-  selectedAmountOfHours = x;
+  selectedAmountOfHours = x + 1;
   return isChoosenHour;
 };
 
@@ -55,11 +53,7 @@ submit.addEventListener("click", function () {
   }
   if ((isChoosenHour === true) & (isChoosenBus === true)) {
     sleepTime = timeStringToFloat(busTime.value) - selectedAmountOfHours;
+    localStorage.setItem("timeSleep", `${sleepTime}`);
     window.location = "answer.html";
   }
 });
-
-if (window.location == "answer.html") {
-  sleepHour.textContent = sleepTime;
-}
-// dodac zeby selectedhour bylo zapisane jako element w pliku answer html
