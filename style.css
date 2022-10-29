@@ -76,6 +76,7 @@ hr {
   font-size: 2rem;
   border-color: rgb(121, 73, 255);
   font-family: var(--font-family);
+  text-align: center;
 }
 
 .how--long--question {

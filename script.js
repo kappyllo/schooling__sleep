@@ -15,6 +15,7 @@ let selectedAmountOfHours;
 let isChoosenHour = false;
 let isChoosenBus = false;
 let sleepTime;
+let wakeUp;
 
 //functions
 const selectingHours = function (x) {
@@ -28,6 +29,15 @@ function timeStringToFloat(time) {
   let hours = parseInt(hoursMinutes[0], 10);
   let minutes = hoursMinutes[1] ? parseInt(hoursMinutes[1], 10) : 0;
   return hours + minutes / 60;
+}
+
+function NumToTime(num) {
+  let hours = Math.floor(num / 60);
+  let minutes = num % 60;
+  if (minutes + "".length < 2) {
+    minutes = "0" + minutes;
+  }
+  return hours + ":" + minutes;
 }
 
 //event listeners
@@ -53,7 +63,9 @@ submit.addEventListener("click", function () {
   }
   if ((isChoosenHour === true) & (isChoosenBus === true)) {
     sleepTime = timeStringToFloat(busTime.value) - selectedAmountOfHours;
-    localStorage.setItem("timeSleep", `${sleepTime}`);
+    wakeUp = sleepTime + selectedAmountOfHours;
+    localStorage.setItem("wakeHour", `${NumToTime(wakeUp)}`);
+    localStorage.setItem("timeSleep", `${NumToTime(sleepTime)}`);
     window.location = "answer.html";
   }
 });
