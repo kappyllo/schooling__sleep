@@ -63,6 +63,9 @@ submit.addEventListener("click", function () {
   }
   if ((isChoosenHour === true) & (isChoosenBus === true)) {
     sleepTime = timeStringToFloat(busTime.value) - selectedAmountOfHours;
+    if (sleepTime < 0) {
+      sleepTime = sleepTime + 12;
+    }
     wakeUp = sleepTime + selectedAmountOfHours;
     localStorage.setItem("wakeHour", `${NumToTime(wakeUp)}`);
     localStorage.setItem("timeSleep", `${NumToTime(sleepTime)}`);
